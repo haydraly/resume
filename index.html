@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haider Ali — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: #E5E7EB;
+      color: #101A31;
+      line-height: 1.5;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #FFFFFF;
+  padding: 18mm 16mm;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  border: 1px solid #D1D5DB;
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-image: url('resume-images/haider-resume-watermark-image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+}
+
+    .page-number {
+      position: absolute;
+      bottom: 12mm;
+      right: 16mm;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #9CA3AF;
+      letter-spacing: 1px;
+    }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .resume-header {
+      display: flex;
+      align-items: stretch;
+      gap: 1.8rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 2px solid #FF8308;
+      padding-bottom: 1.2rem;
+    }
+
+    .photo-placeholder {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #FF8308;
+      background: #F4F6F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-size: 2.5rem;
+      color: #9CA3AF;
+      font-weight: 300;
+      box-shadow: 0 4px 12px rgba(255, 131, 8, 0.08);
+      align-self: center;
+    }
+
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .name-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #FF8308;
+      letter-spacing: -0.02em;
+    }
+
+    .role-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #101A31;
+      letter-spacing: 0.2px;
+      margin-top: 0.1rem;
+    }
+
+    /* ===== CONTACT ROW ===== */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      text-decoration: none;
+      color: #2563EB;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: #1D4ED8;
+      text-decoration: underline;
+    }
+
+    .contact-item .icon-svg {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+    }
+
+    .contact-item .icon-svg svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    .contact-item .sep {
+      color: #101A31;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0.1rem;
+      user-select: none;
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+    .section {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #FF8308;
+      border-bottom: 1px solid #E5E7EB;
+      padding-bottom: 4px;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-title-sub {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #9CA3AF;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-text {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #2c3a5c;
+    }
+
+    .summary-text strong {
+      color: #101A31;
+    }
+
+    /* ===== COMPETENCIES ===== */
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.2rem 2rem;
+    }
+
+    .competencies-grid li {
+      font-size: 0.78rem;
+      color: #2c3a5c;
+      list-style: none;
+      padding: 0.15rem 0;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .competencies-grid li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      color: #FF8308;
+      font-weight: 700;
+      font-size: 0.6rem;
+      top: 0.35rem;
+    }
+
+    /* ============================================================
+       EXPERIENCE
+       ============================================================ */
+    .exp-item {
+      margin-bottom: 1rem;
+    }
+
+    .exp-role {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #101A31;
+    }
+
+    .exp-company-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.2rem 0.3rem;
+      margin-top: 0.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-company-link {
+      font-weight: 700;
+      color: #2563EB;
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+
+    .exp-company-link:hover {
+      text-decoration: underline;
+      color: #1D4ED8;
+    }
+
+    .exp-meta {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #6B7280;
+    }
+
+    .exp-meta .sep {
+      color: #101A31;
+      font-weight: 700;
+      margin: 0 0.2rem;
+    }
+
+    .exp-meta .dash {
+      color: #6B7280;
+      margin: 0 0.1rem;
+    }
+
+    .exp-desc {
+      font-size: 0.8rem;
+      color: #2c3a5c;
+      line-height: 1.7;
+      padding-left: 0.3rem;
+    }
+
+    .exp-desc ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-desc li {
+      padding: 0.1rem 0 0.1rem 1.2rem;
+      position: relative;
+    }
+
+    .exp-desc li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      color: #101A31;
+      font-weight: 700;
+      font-size: 0.55rem;
+      top: 0.4rem;
+    }
+
+    /* ============================================================
+       SKILLS - TWO COLUMN
+       ============================================================ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 2rem;
+    }
+
+    .skills-grid .skills-group {
+      margin-bottom: 0.2rem;
+    }
+
+    .skills-grid .label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #101A31;
+    }
+
+    .skills-grid .tags {
+      font-size: 0.75rem;
+      color: #2c3a5c;
+    }
+
+    /* ============================================================
+       EDUCATION
+       ============================================================ */
+    .edu-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .edu-degree {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #101A31;
+    }
+
+    .edu-school {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #101A31;
+    }
+
+    .edu-grade {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #6B7280;
+    }
+
+    .edu-grade .value {
+      font-weight: 600;
+      color: #101A31;
+    }
+
+    /* ============================================================
+       LANGUAGES
+       ============================================================ */
+    .lang-item {
+      font-size: 0.82rem;
+      color: #2c3a5c;
+      padding: 0.1rem 0;
+    }
+
+    .lang-item .lang-name {
+      font-weight: 600;
+      color: #101A31;
+    }
+
+    /* ============================================================
+       PRINT
+       ============================================================ */
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+        gap: 0;
+      }
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        padding: 18mm 16mm;
+        box-shadow: none;
+        border: 1px solid #D1D5DB;
+        margin: 0;
+        page-break-after: always;
+        border-radius: 0;
+      }
+      .page:last-child {
+        page-break-after: avoid;
+      }
+      .contact-item {
+        color: #2563EB;
+      }
+      .exp-company-link {
+        color: #2563EB;
+      }
+      .photo-placeholder {
+        border-color: #FF8308;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        width: 100%;
+        min-height: auto;
+        padding: 12mm 10mm;
+      }
+      .competencies-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .header-right {
+        justify-content: flex-start;
+      }
+      .name-title {
+        font-size: 1.8rem;
+      }
+      .photo-placeholder {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+      }
+      .contact-row {
+        gap: 0.2rem 0.5rem;
+        font-size: 0.7rem;
+      }
+      .contact-item .icon-svg {
+        width: 14px;
+        height: 14px;
+      }
+      .contact-item .icon-svg svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE 1
+       ============================================================ -->
+  <div class="page">
+    <span class="page-number">1 / 3</span>
+
+    <!-- ===== HEADER ===== -->
+    <header class="resume-header">
+      <div class="photo-placeholder">
+        <img src="resume-images/haiderali-resume.png" alt="Haider Ali" onerror="this.parentElement.innerHTML='📸'" />
+      </div>
+      <div class="header-right">
+        <div class="name-title">Haider Ali</div>
+        <div class="role-title">Digital &amp; Performance Marketer | Social Media &amp; Brand Strategist</div>
+        <div class="contact-row" style="display:flex; flex-direction:column; gap:0.2rem 0; margin-top:0.6rem;">
+
+  <!-- Line 1: Email | LinkedIn (no divider) -->
+  <div style="display:flex; align-items:center; gap:0; width:100%;">
+    <span style="display:inline-flex; align-items:center; gap:0.3rem; min-width:200px;">
+      <span class="icon-svg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#101A31" stroke-width="2" width="16" height="16">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path d="M22 4L12 13 2 4" />
+        </svg>
+      </span>
+      <a href="mailto:haydraly1@gmail.com" class="contact-item" style="text-decoration:none; color:#2563EB; font-weight:600;">haydraly1@gmail.com</a>
+    </span>
+    <!-- Divider REMOVED -->
+    <span style="display:inline-flex; align-items:center; gap:0.3rem;">
+      <span class="icon-svg">
+        <svg viewBox="0 0 24 24" fill="#0A66C2" width="16" height="16">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </span>
+      <a href="https://www.linkedin.com/in/haiderr-ali/" target="_blank" class="contact-item" style="text-decoration:none; color:#2563EB; font-weight:600;">linkedin.com/in/haiderr-ali/</a>
+    </span>
+  </div>
+
+  <!-- Line 2: WhatsApp | Portfolio (no divider) -->
+  <div style="display:flex; align-items:center; gap:0; width:100%;">
+    <span style="display:inline-flex; align-items:center; gap:0.3rem; min-width:200px;">
+      <span class="icon-svg">
+        <svg viewBox="0 0 24 24" fill="#25D366" width="16" height="16">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        </svg>
+      </span>
+      <a href="https://wa.me/923110177836" target="_blank" class="contact-item" style="text-decoration:none; color:#2563EB; font-weight:600;">+92 311 0177836</a>
+    </span>
+    <!-- Divider REMOVED -->
+    <span style="display:inline-flex; align-items:center; gap:0.3rem;">
+      <span class="icon-svg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#101A31" stroke-width="2" width="16" height="16">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      </span>
+      <a href="https://haider-ali-portfolio.netlify.app" target="_blank" class="contact-item" style="text-decoration:none; color:#2563EB; font-weight:600;">haider-ali-portfolio.netlify.app</a>
+    </span>
+  </div>
+</div>
+    </header>
+
+    <!-- ===== PROFESSIONAL SUMMARY ===== -->
+    <section class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        A strategic and data-driven Digital &amp; Performance Marketer, Social Media &amp; Brand Strategist with 4+ years of experience architecting and executing comprehensive brand campaigns for a global client portfolio. Proven expertise in translating brand vision into high-impact social media and performance marketing strategies with spend of thousands of dollars that drive engagement, visibility, and conversions. Adept at leveraging audience insights and platform analytics to optimize performance and achieve measurable business outcomes across various industries including F&amp;B, BFSI, E-Commerce &amp; Retail, Education &amp; Training, Health, Wellness &amp; Fitness, Real Estate &amp; Construction and Business Services &amp; Professional Networking.
+      </p>
+    </section>
+
+    <!-- ===== CORE COMPETENCIES ===== -->
+    <section class="section">
+      <div class="section-title">Core Competencies</div>
+      <ul class="competencies-grid">
+        <li>Social Media Strategy</li>
+        <li>Brand Positioning &amp; Content Strategy</li>
+        <li>Paid Social Ads (Meta &amp; TikTok)</li>
+        <li>Content Calendar Planning</li>
+        <li>Account Management</li>
+        <li>Performance Marketing</li>
+        <li>Lead Generation</li>
+        <li>Media Strategy &amp; Roadmapping</li>
+        <li>Campaign Analytics &amp; Optimization</li>
+        <li>PPC (Google &amp; LinkedIn Ads)</li>
+        <li>Tracking (GA-4 &amp; GTM)</li>
+        <li>Retargeting Campaigns</li>
+        <li>A/B Testing &amp; CRO</li>
+        <li>Cross-Platform Campaign Management</li>
+        <li>Performance Analytics &amp; Optimization</li>
+        <li>Team Leadership</li>
+        <li>Project Management</li>
+        <li>Client Relationship Management</li>
+      </ul>
+    </section>
+
+    <!-- ===== PROFESSIONAL EXPERIENCE (Page 1) ===== -->
+    <section class="section">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- KBM BPO Digital -->
+      <div class="exp-item">
+        <div class="exp-role">Sr. Social Media &amp; Brand Strategist</div>
+        <div class="exp-company-row">
+          <a href="https://kbmbpodigital.com/" target="_blank" class="exp-company-link">KBM BPO Digital</a>
+          <span class="exp-meta">
+            <span class="sep">|</span> Sep 2025 <span class="dash">–</span> Present
+            <span class="sep">|</span> UAE
+            <span class="sep">|</span> Remote
+          </span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Serve as the Senior Social Media Lead, orchestrating internal teams and streamlining workflows for 10+ concurrent projects in collaboration with on-site Content Assistant Directors.</li>
+            <li>Managed high-budget Meta and Google Ads (thousands of AED/month) for a Dubai-based Real Estate Broker, capturing high-value leads from Australia, UK, USA, Canada, and South Asia with full-stack GA4 and GTM tracking.</li>
+            <li>Directed end-to-end social strategy for a UAE sports nutrition store, utilizing a product storytelling framework that yielded a 25% increase in qualified inquiries.</li>
+            <li>Spearheaded branding and social management for a UAE fine-dining establishment, growing engagement by 40% in 3 months and driving a 50% increase in dine-in offers via Meta Ads.</li>
+            <li>Elevated brand awareness and sales for a premium British Fish &amp; Chips brand and an Italian Casual Coffee Shop through targeted Meta Ads and premium brand positioning.</li>
+            <li>Developed corporate branding and strict brand governance for a UAE-based Supermarket, ensuring visual consistency across all corporate presentations and social platforms.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tech Cog -->
+      <div class="exp-item">
+        <div class="exp-role">Digital Marketer &amp; Social Media Strategist</div>
+        <div class="exp-company-row">
+          <a href="https://www.techcogg.com/" target="_blank" class="exp-company-link">Tech Cog</a>
+          <span class="exp-meta">
+            <span class="sep">|</span> Jun 2025 <span class="dash">–</span> Present
+            <span class="sep">|</span> Lahore, PK
+            <span class="sep">|</span> On-site
+          </span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Developed and executed holistic social strategies for a diverse international portfolio, including luxury brands and retail chains, aligning digital efforts with bottom-line business objectives.</li>
+            <li>Architected the full rebrand and social launch for a Saudi Arabian investment firm, crafting a strategic messaging framework and content pillars that established sector authority.</li>
+            <li>Engineered the social media and digital strategy for a Lahore-based aesthetic clinic, including full profile builds across social platforms and Google Business Profile optimization to drive measurable revenue growth.</li>
+            <li>Built the global employer brand for a Kenya-based HR agency, designing a comprehensive content calendar and brand messaging that enhanced recruitment marketing and market positioning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       PAGE 2
+       ============================================================ -->
+  <div class="page">
+    <span class="page-number">2 / 3</span>
+
+    <!-- ===== PROFESSIONAL EXPERIENCE (Page 2) ===== -->
+    <section class="section" style="margin-top:0;">
+      <div class="section-title">Professional Experience</div>
+
+      <!-- Fantech Labs -->
+      <div class="exp-item">
+        <div class="exp-role">Digital Marketing Executive</div>
+        <div class="exp-company-row">
+          <a href="https://fantechlabs.ca/" target="_blank" class="exp-company-link">Fantech Labs</a>
+          <span class="exp-meta">
+            <span class="sep">|</span> Apr 2023 <span class="dash">–</span> Jun 2025
+            <span class="sep">|</span> Lahore, PK
+            <span class="sep">|</span> On-site
+          </span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Executed data-driven Meta Ads for a U.S.-based healthcare client, increasing engagement by 35% and boosting online course sales.</li>
+            <li>Created high-performing Facebook and Instagram ads for an Indonesia-based martial arts client, boosting brand visibility and sales by 70%.</li>
+            <li>Managed multi-departmental Meta and Pinterest ad campaigns for a leading European e-commerce company and U.S. &amp; Canadian dropshipping stores, increasing sales by 35%.</li>
+            <li>Managed high-budget Facebook Ads campaigns for a Canadian mortgage client, optimizing CAD 25,000/month ad spend with a focus on lead generation through creative A/B testing.</li>
+            <li>Drove traffic and engagement for a U.S.-based home &amp; bath accessories store by optimizing Pinterest pins, boosting brand visibility and website visits.</li>
+            <li>Optimized high-budget Google Ads (CAD 45,000/mo) for a Canada-based mortgage client and German film studio, driving qualified leads.</li>
+            <li>Executed targeted Google Ads campaigns for a U.S.-based Jiu-Jitsu client, boosting engagement and conversions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Teglax -->
+      <div class="exp-item">
+        <div class="exp-role">Digital Marketing Manager</div>
+        <div class="exp-company-row">
+          <a href="https://teglax.com/" target="_blank" class="exp-company-link">Teglax</a>
+          <span class="exp-meta">
+            <span class="sep">|</span> Jan 2024 <span class="dash">–</span> Jun 2025
+            <span class="sep">|</span> Okara, PK
+            <span class="sep">|</span> Hybrid
+          </span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Spearheaded social media and digital marketing strategies for multiple brands, including an Online Education Consultancy, a Traditional &amp; Digital Coaching Institute, and an Online Clothing Store in Pakistan.</li>
+            <li>Managed end-to-end digital marketing projects, ensuring timely delivery and quality outcomes with clear KPIs and deliverables.</li>
+            <li>Led cross-functional teams, delegated tasks efficiently, and developed project plans with clear deliverables to meet deadlines and objectives.</li>
+            <li>Conducted daily stand-ups and stakeholder coordination on project timelines, optimizing resource allocation and ensuring proactive issue resolution.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECHNICAL SKILLS ===== -->
+    <section class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="skills-group">
+            <span class="label">Performance Marketing:</span>
+            <span class="tags">Google Ads, Meta Ads, Pinterest Ads, TikTok Ads</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Social Media Marketing:</span>
+            <span class="tags">Social Media Strategy, Social Media Marketing, Social Media Optimization, Social Media Ads, Community Management, Account Management</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Influencer Marketing:</span>
+            <span class="tags">Influencer Hunting, Content Optimization, Script Writing, Brainstorming, Budget Negotiation, Client-Centered Interventions, Audience Planning, Marketing Campaign Management</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Content Marketing:</span>
+            <span class="tags">Content Writing, Copywriting, Content Strategy, Content Management, Content Marketing, Web Content Writing, Content Scheduling</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Lead Generation:</span>
+            <span class="tags">PPC Campaigns, Paid Search Campaigns, Landing Page Optimization, Conversion Rate Optimization, Keyword Research</span>
+          </div>
+        </div>
+        <div>
+          <div class="skills-group">
+            <span class="label">Market Research &amp; Strategy:</span>
+            <span class="tags">Market Research, Marketing Strategy, Strategic Market Planning, Competitive Strategies, Trend Analysis, Data Analysis</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Content Creation &amp; Design:</span>
+            <span class="tags">Content Strategy, Copywriting, Canva, CapCut</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Project Management:</span>
+            <span class="tags">Trello, Asana, Monday.com, Slack, Airtable</span>
+          </div>
+          <div class="skills-group">
+            <span class="label">Data Analysis &amp; Tracking:</span>
+            <span class="tags">Google Analytics, Google Tag Manager, Google Workspace, Gamma.app</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================================================
+       PAGE 3
+       ============================================================ -->
+  <div class="page">
+    <span class="page-number">3 / 3</span>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="section" style="margin-top:0;">
+      <div class="section-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-degree">BS Applied Psychology</div>
+        <div class="edu-school">University of Okara</div>
+        <div class="edu-grade">CGPA: <span class="value">3.76 / 4.00</span></div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">F.Sc. (Pre-Medical)</div>
+        <div class="edu-school">Govt. Postgraduate College, Okara</div>
+        <div class="edu-grade">Final Grade: <span class="value">A+</span></div>
+      </div>
+    </section>
+
+    <!-- ===== LANGUAGES ===== -->
+    <section class="section">
+      <div class="section-title">Languages</div>
+      <div class="lang-item"><span class="lang-name">Urdu:</span> Native Proficiency</div>
+      <div class="lang-item"><span class="lang-name">English:</span> Professional Proficiency</div>
+    </section>
+
+  </div>
+
+</body>
+</html>
