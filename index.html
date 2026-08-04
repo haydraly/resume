@@ -8,25 +8,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Raleway', sans-serif;
-      background: #E5E7EB;
-      color: #101A31;
-      line-height: 1.5;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #E5E7EB;
+  color: #101A31;
+  line-height: 1.5;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-    .page {
+.page {
   width: 210mm;
   min-height: 297mm;
   background: #FFFFFF;
@@ -38,338 +38,415 @@
   flex-direction: column;
 }
 
-    .page::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      height: 80%;
-      background-image: url('resume-images/haider-resume-watermark-image.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.06;
-      pointer-events: none;
-      z-index: 0;
-    }
+.page::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background-image: url('./resume-images/haider-resume-watermark-image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
 
-    /* ============================================================
-       HEADER
-       ============================================================ */
-    .resume-header {
-      display: flex;
-      align-items: stretch;
-      gap: 1.8rem;
-      margin-bottom: 1.8rem;
-      border-bottom: 2px solid #FF8308;
-      padding-bottom: 1.2rem;
-    }
+/* ============================================================
+   HEADER
+   ============================================================ */
+.resume-header {
+  display: flex;
+  align-items: stretch;
+  gap: 1.8rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 2px solid #FF8308;
+  padding-bottom: 1.2rem;
+}
 
-    .photo-placeholder {
-      flex-shrink: 0;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #FF8308;
-      background: #F4F6F9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      font-size: 2.5rem;
-      color: #9CA3AF;
-      font-weight: 300;
-      box-shadow: 0 4px 12px rgba(255, 131, 8, 0.08);
-      align-self: center;
-    }
+.photo-placeholder {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #FF8308;
+  background: #F4F6F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 2.5rem;
+  color: #9CA3AF;
+  font-weight: 300;
+  box-shadow: 0 4px 12px rgba(255, 131, 8, 0.08);
+  align-self: center;
+}
 
-    .photo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .header-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.header-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .name-title {
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #FF8308;
-      letter-spacing: -0.02em;
-    }
+.name-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #FF8308;
+  letter-spacing: -0.02em;
+}
 
-    .role-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #101A31;
-      letter-spacing: 0.2px;
-      margin-top: 0.1rem;
-    }
+.role-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #101A31;
+  letter-spacing: 0.2px;
+  margin-top: 0.1rem;
+}
 
-    /* ===== CONTACT ROW ===== */
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.4rem 0.8rem;
-      margin-top: 0.6rem;
-      font-size: 0.78rem;
-    }
+/* ===== CONTACT ROW ===== */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.8rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+}
 
-    .contact-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      text-decoration: underline;
-      color: #2563EB;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: underline;
+  color: #2563EB;
+  font-weight: 600;
+  transition: color 0.2s;
+}
 
-    .contact-item:hover {
-      color: #1D4ED8;
-    }
+.contact-item:hover {
+  color: #1D4ED8;
+}
 
-    .contact-item .icon-svg {
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-    }
+.contact-item .icon-svg {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
 
-    .contact-item .icon-svg svg {
-      width: 16px;
-      height: 16px;
-      display: block;
-    }
+.contact-item .icon-svg svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
 
-    .contact-item .sep {
-      color: #101A31;
-      font-weight: 700;
-      font-size: 1rem;
-      margin: 0 0.1rem;
-      user-select: none;
-    }
+.contact-item .sep {
+  color: #101A31;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0.1rem;
+  user-select: none;
+}
 
-    /* ============================================================
-       SECTIONS
-       ============================================================ */
-    .section {
-      margin-bottom: 1.2rem;
-    }
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section {
+  margin-bottom: 1.2rem;
+}
 
-    .section-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #FF8308;
-      border-bottom: 1px solid #E5E7EB;
-      padding-bottom: 4px;
-      margin-bottom: 0.7rem;
-    }
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FF8308;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 4px;
+  margin-bottom: 0.7rem;
+}
 
-    .section-title-sub {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: #9CA3AF;
-      letter-spacing: 0.5px;
-    }
+.section-title-sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #9CA3AF;
+  letter-spacing: 0.5px;
+}
 
-    .summary-text {
-      font-size: 0.82rem;
-      line-height: 1.7;
-      color: #2c3a5c;
-    }
+.summary-text {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #2c3a5c;
+  text-align: justify;
+}
 
-    .summary-text strong {
-      color: #101A31;
-    }
+.summary-text strong {
+  color: #101A31;
+}
 
-    /* ===== COMPETENCIES ===== */
-    .competencies-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.2rem 2rem;
-    }
+/* ============================================================
+   COMPETENCIES - 3 COLUMN
+   ============================================================ */
+.competencies-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.2rem 2rem;
+  margin-top: 0.3rem;
+}
 
-    .competencies-grid li {
-      font-size: 0.78rem;
-      color: #2c3a5c;
-      list-style: none;
-      padding: 0.15rem 0;
-      position: relative;
-      padding-left: 1.2rem;
-    }
+.competency-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .competencies-grid li::before {
-      content: "●";
-      position: absolute;
-      left: 0;
-      color: #FF8308;
-      font-weight: 700;
-      font-size: 0.6rem;
-      top: 0.35rem;
-    }
+.competency-col li {
+  font-size: 0.78rem;
+  color: #2c3a5c;
+  padding: 0.15rem 0;
+  position: relative;
+  padding-left: 1rem;
+}
 
-    /* ============================================================
-       EXPERIENCE
-       ============================================================ */
-    .exp-item {
-      margin-bottom: 1rem;
-    }
+.competency-col li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #FF8308;
+  font-weight: 700;
+  font-size: 0.5rem;
+  top: 0.3rem;
+}
 
-    .exp-role {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #101A31;
-    }
+/* ============================================================
+   EXPERIENCE & LOGO STYLING
+   ============================================================ */
+.exp-item {
+  margin-bottom: 1rem;
+  position: relative;
+}
 
-    .exp-company-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.2rem 0.3rem;
-      margin-top: 0.05rem;
-      margin-bottom: 0.3rem;
-    }
+.exp-item .exp-logo-float {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 3px;
+  border: 1px solid #e5e7eb;
+}
 
-    .exp-company-link {
-      font-weight: 700;
-      color: #2563EB;
-      text-decoration: underline;
-      font-size: 0.82rem;
-    }
+.exp-role {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #101A31;
+  margin-bottom: 0.1rem;
+  padding-left: 50px;
+}
 
-    .exp-company-link:hover {
-      color: #1D4ED8;
-    }
+.exp-company-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.3rem;
+  margin-top: 0.05rem;
+  margin-bottom: 0.3rem;
+  padding-left: 50px;
+}
 
-    .exp-meta {
-      font-size: 0.78rem;
-      font-weight: 400;
-      color: #6B7280;
-    }
+.exp-company-link {
+  font-weight: 700;
+  color: #2563EB;
+  text-decoration: underline;
+  font-size: 0.82rem;
+}
 
-    .exp-meta .sep {
-      color: #101A31;
-      font-weight: 700;
-      margin: 0 0.2rem;
-    }
+.exp-company-link:hover {
+  color: #1D4ED8;
+}
 
-    .exp-meta .dash {
-      color: #6B7280;
-      margin: 0 0.1rem;
-    }
+.exp-meta {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: #6B7280;
+}
 
-    .exp-desc {
-      font-size: 0.8rem;
-      color: #2c3a5c;
-      line-height: 1.7;
-      padding-left: 0.3rem;
-    }
+.exp-meta .sep {
+  color: #101A31;
+  font-weight: 700;
+  margin: 0 0.2rem;
+}
 
-    .exp-desc ul {
-      list-style: none;
-      padding: 0;
-    }
+.exp-meta .dash {
+  color: #6B7280;
+  margin: 0 0.1rem;
+}
 
-    .exp-desc li {
-      padding: 0.1rem 0 0.1rem 1.2rem;
-      position: relative;
-    }
+.exp-meta .date-part {
+  font-weight: 500;
+  color: #101A31;
+}
 
-    .exp-desc li::before {
-      content: "●";
-      position: absolute;
-      left: 0;
-      color: #101A31;
-      font-weight: 700;
-      font-size: 0.55rem;
-      top: 0.4rem;
-    }
+.exp-meta .location-part {
+  font-weight: 500;
+  color: #101A31;
+}
 
-    /* ============================================================
-       SKILLS - TWO COLUMN
-       ============================================================ */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.3rem 2rem;
-    }
+.exp-meta .type-part {
+  font-weight: 500;
+  color: #101A31;
+}
 
-    .skills-grid .skills-group {
-      margin-bottom: 0.2rem;
-    }
+.exp-meta .duration-number {
+  font-weight: 500;
+  color: #101A31;
+}
 
-    .skills-grid .label {
-      font-weight: 700;
-      font-size: 0.75rem;
-      color: #101A31;
-    }
+.exp-meta .duration-label {
+  font-weight: 400;
+  color: #6B7280;
+}
 
-    .skills-grid .tags {
-      font-size: 0.75rem;
-      color: #2c3a5c;
-    }
+.exp-desc {
+  font-size: 0.8rem;
+  color: #2c3a5c;
+  line-height: 1.7;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 15px;
+  text-align: justify;
+}
 
-    /* ============================================================
-       EDUCATION
-       ============================================================ */
-    .edu-item {
-      margin-bottom: 0.7rem;
-    }
+.exp-desc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .edu-degree {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #101A31;
-    }
+.exp-desc li {
+  padding: 0.1rem 0 0.1rem 1.2rem;
+  position: relative;
+  margin-left: 0;
+}
 
-    .edu-school {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #101A31;
-    }
+.exp-desc li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color: #101A31;
+  font-weight: 700;
+  font-size: 0.55rem;
+  top: 0.4rem;
+}
 
-    .edu-grade {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #6B7280;
-    }
+/* ============================================================
+   EDUCATION & LOGO STYLING
+   ============================================================ */
+.edu-item {
+  margin-bottom: 0.7rem;
+  position: relative;
+}
 
-    .edu-grade .value {
-      font-weight: 600;
-      color: #101A31;
-    }
+.edu-item .edu-logo-float {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 3px;
+  border: 1px solid #e5e7eb;
+}
 
-    /* ============================================================
-       LANGUAGES
-       ============================================================ */
-    .lang-item {
-      font-size: 0.82rem;
-      color: #2c3a5c;
-      padding: 0.1rem 0;
-    }
+.edu-item .edu-degree {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #101A31;
+  margin-bottom: 0.1rem;
+  padding-left: 48px;
+}
 
-    .lang-item .lang-name {
-      font-weight: 600;
-      color: #101A31;
-    }
+.edu-item .edu-school {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #101A31;
+  display: block;
+  padding-left: 48px;
+}
 
-    /* ============================================================
-       PRINT
-       ============================================================ */
-    @media print {
+.edu-item .edu-grade {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #6B7280;
+  display: block;
+  padding-left: 48px;
+}
+
+.edu-item .edu-grade .value {
+  font-weight: 600;
+  color: #101A31;
+}
+
+/* ============================================================
+   SKILLS - TWO COLUMN
+   ============================================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 2rem;
+}
+
+.skills-grid .skills-group {
+  margin-bottom: 0.2rem;
+}
+
+.skills-grid .label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #101A31;
+}
+
+.skills-grid .tags {
+  font-size: 0.75rem;
+  color: #2c3a5c;
+  text-align: justify;
+}
+
+/* ============================================================
+   LANGUAGES
+   ============================================================ */
+.lang-item {
+  font-size: 0.82rem;
+  color: #2c3a5c;
+  padding: 0.1rem 0;
+}
+
+.lang-item .lang-name {
+  font-weight: 600;
+  color: #101A31;
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
   body {
     background: #FFFFFF;
     padding: 0;
@@ -399,42 +476,51 @@
   .photo-placeholder {
     border-color: #FF8308;
   }
+  
+  /* FIX: Force 3 columns in print */
+  .competencies-3col {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
 }
 
-    @media (max-width: 800px) {
-      .page {
-        width: 100%;
-        min-height: auto;
-        padding: 12mm 10mm;
-      }
-      .competencies-grid,
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .header-right {
-        justify-content: flex-start;
-      }
-      .name-title {
-        font-size: 1.8rem;
-      }
-      .photo-placeholder {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-      }
-      .contact-row {
-        gap: 0.2rem 0.5rem;
-        font-size: 0.7rem;
-      }
-      .contact-item .icon-svg {
-        width: 14px;
-        height: 14px;
-      }
-      .contact-item .icon-svg svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
+
+
+@media (max-width: 800px) {
+  .page {
+    width: 100%;
+    min-height: auto;
+    padding: 12mm 10mm;
+  }
+  .competencies-3col {
+    grid-template-columns: 1fr 1fr;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header-right {
+    justify-content: flex-start;
+  }
+  .name-title {
+    font-size: 1.8rem;
+  }
+  .photo-placeholder {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  .contact-row {
+    gap: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  .contact-item .icon-svg {
+    width: 14px;
+    height: 14px;
+  }
+  .contact-item .icon-svg svg {
+    width: 14px;
+    height: 14px;
+  }
+}
   </style>
 </head>
 <body>
@@ -446,9 +532,9 @@
 
     <!-- ===== HEADER ===== -->
     <header class="resume-header">
-      <div class="photo-placeholder">
-        <img src="resume-images/haiderali-resume.png" alt="Haider Ali" onerror="this.parentElement.innerHTML='📸'" />
-      </div>
+<div class="photo-placeholder" style="display:none;">
+  <img src="resume-images/haiderali-resume.png" alt="Haider Ali" onerror="this.parentElement.innerHTML='📸'" />
+</div>
       <div class="header-right">
         <div class="name-title">Haider Ali</div>
         <div class="role-title">Digital &amp; Performance Marketer | Social Media &amp; Brand Strategist</div>
@@ -493,7 +579,7 @@
     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
   </svg>
 </span>
-              <a href="https://haider-ali-portfolio.netlify.app" target="_blank" class="contact-item">haider-ali-portfolio.netlify.app</a>
+              <a href="https://haider-ali-portfolio.pages.dev/" target="_blank" class="contact-item">haider-ali-portfolio.pages.dev</a>
             </span>
           </div>
         </div>
@@ -508,167 +594,212 @@
       </p>
     </section>
 
-    <!-- ===== CORE COMPETENCIES ===== -->
-    <section class="section">
-      <div class="section-title">Core Competencies</div>
-      <ul class="competencies-grid">
-        <li>Social Media Strategy</li>
-        <li>Brand Positioning &amp; Content Strategy</li>
-        <li>Paid Social Ads (Meta &amp; TikTok)</li>
-        <li>Content Calendar Planning</li>
-        <li>Account Management</li>
-        <li>Performance Marketing</li>
-        <li>Lead Generation</li>
-        <li>Media Strategy &amp; Roadmapping</li>
-        <li>Campaign Analytics &amp; Optimization</li>
-        <li>PPC (Google &amp; LinkedIn Ads)</li>
-        <li>Tracking (GA-4 &amp; GTM)</li>
-        <li>Retargeting Campaigns</li>
-        <li>A/B Testing &amp; CRO</li>
-        <li>Cross-Platform Campaign Management</li>
-        <li>Performance Analytics &amp; Optimization</li>
-        <li>Team Leadership</li>
-        <li>Project Management</li>
-        <li>Client Relationship Management</li>
+<!-- ===== CORE COMPETENCIES ===== -->
+<section class="section">
+  <div class="section-title">Core Competencies</div>
+  <div class="competencies-3col">
+    <div class="competency-col">
+      <ul>
+        <li>Meta Ads</li>
+        <li>Google &amp; LinkedIn Ads</li>
+        <li>TikTok &amp; Pinterest Ads</li>
+        <li>Retargeting Funnels</li>
+        <li>Customer Acquisition Funnels</li>
+        <li>Audience Persona Mapping</li>
+        <li>ROAS &amp; CPA Optimization</li>
+        <li>Google Analytics 4 (GA-4)</li>
       </ul>
-    </section>
+    </div>
+    <div class="competency-col">
+      <ul>
+        <li>Google Tag Manager (GTM)</li>
+        <li>Event &amp; Conversion Tracking</li>
+        <li>Conversion Rate Optimization</li>
+        <li>Landing Page Optimization</li>
+        <li>Landing Page Funnel Design</li>
+        <li>Brand Positioning</li>
+        <li>Content &amp; Media Strategy</li>
+        <li>Content Calendar Planning</li>
+      </ul>
+    </div>
+    <div class="competency-col">
+      <ul>
+        <li>Community Engagement</li>
+        <li>Copywriting &amp; Creative Direction</li>
+        <li>Social Media Management</li>
+        <li>Account Management</li>
+        <li>Client Relation Management</li>
+        <li>Client Reporting</li>
+        <li>Project Management</li>
+        <li>Team Leadership</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== PROFESSIONAL EXPERIENCE (Page 1) ===== -->
-    <section class="section">
-      <div class="section-title">Professional Experience</div>
+<!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+<section class="section">
+  <div class="section-title">Professional Experience</div>
 
-      <!-- KBM BPO Digital -->
-      <div class="exp-item">
-        <div class="exp-role">Sr. Social Media &amp; Brand Strategist</div>
-        <div class="exp-company-row">
-          <a href="https://kbmbpodigital.com/" target="_blank" class="exp-company-link">KBM BPO Digital</a>
-          <span class="exp-meta">
-            <span class="sep">|</span> Sep 2025 <span class="dash">–</span> Present
-            <span class="sep">|</span> UAE
-            <span class="sep">|</span> Remote
-          </span>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Serve as the Senior Social Media Lead, orchestrating internal teams and streamlining workflows for 10+ concurrent projects in collaboration with on-site Content Assistant Directors.</li>
-            <li>Managed high-budget Meta and Google Ads (thousands of AED/month) for a Dubai-based Real Estate Broker, capturing high-value leads from Australia, UK, USA, Canada, and South Asia with full-stack GA4 and GTM tracking.</li>
-            <li>Directed end-to-end social strategy for a UAE sports nutrition store, utilizing a product storytelling framework that yielded a 25% increase in qualified inquiries.</li>
-            <li>Spearheaded branding and social management for a UAE fine-dining establishment, growing engagement by 40% in 3 months and driving a 50% increase in dine-in offers via Meta Ads.</li>
-            <li>Elevated brand awareness and sales for a premium British Fish &amp; Chips brand and an Italian Casual Coffee Shop through targeted Meta Ads and premium brand positioning.</li>
-            <li>Developed corporate branding and strict brand governance for a UAE-based Supermarket, ensuring visual consistency across all corporate presentations and social platforms.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- KBM BPO Digital -->
+  <div class="exp-item">
+    <img src="resume-images/KBMBPODigital-logo.png" alt="KBM BPO Digital" class="exp-logo-float" onerror="this.style.display='none'" />
+    <div class="exp-role">Sr. Social Media &amp; Brand Strategist</div>
+    <div class="exp-company-row">
+      <a href="https://kbmbpodigital.com/" target="_blank" class="exp-company-link">KBM BPO Digital</a>
+      <span class="exp-meta">
+        <span class="sep">|</span> <span class="date-part">Sep 2025</span> <span class="dash">–</span> <span class="date-part">Present</span>
+        <span class="sep">|</span> <span class="location-part">UAE</span>
+        <span class="sep">|</span> <span class="type-part">Remote</span>
+        <span class="sep">|</span> <span class="duration-text">Loading...</span>
+      </span>
+    </div>
+    <div class="exp-desc">
+      <ul>
+        <li>Serve as the Senior Social Media Lead, orchestrating internal teams and streamlining workflows for 10+ concurrent projects in collaboration with on-site Content Assistant Directors.</li>
+        <li>Managed high-budget Meta and Google Ads (thousands of AED/month) for a Dubai-based Real Estate Broker, capturing high-value leads from Australia, UK, USA, Canada, and South Asia with full-stack GA4 and GTM tracking.</li>
+        <li>Directed end-to-end social strategy for a UAE sports nutrition store, utilizing a product storytelling framework that yielded a 25% increase in qualified inquiries.</li>
+        <li>Spearheaded branding and social management for a UAE fine-dining establishment, growing engagement by 40% in 3 months and driving a 50% increase in dine-in offers via Meta Ads.</li>
+        <li>Elevated brand awareness and sales for a premium British Fish &amp; Chips brand and an Italian Casual Coffee Shop through targeted Meta Ads and premium brand positioning.</li>
+        <li>Developed corporate branding and strict brand governance for a UAE-based Supermarket, ensuring visual consistency across all corporate presentations and social platforms.</li>
+      </ul>
+    </div>
+  </div>
 
-      <!-- Tech Cog -->
-      <div class="exp-item">
-        <div class="exp-role">Digital Marketer &amp; Social Media Strategist</div>
-        <div class="exp-company-row">
-          <a href="https://www.techcogg.com/" target="_blank" class="exp-company-link">Tech Cog</a>
-          <span class="exp-meta">
-            <span class="sep">|</span> Jun 2025 <span class="dash">–</span> Present
-            <span class="sep">|</span> Lahore, PK
-            <span class="sep">|</span> On-site
-          </span>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Developed and executed holistic social strategies for a diverse international portfolio, including luxury brands and retail chains, aligning digital efforts with bottom-line business objectives.</li>
-            <li>Architected the full rebrand and social launch for a Saudi Arabian investment firm, crafting a strategic messaging framework and content pillars that established sector authority.</li>
-            <li>Engineered the social media and digital strategy for a Lahore-based aesthetic clinic, including full profile builds across social platforms and Google Business Profile optimization to drive measurable revenue growth.</li>
-            <li>Built the global employer brand for a Kenya-based HR agency, designing a comprehensive content calendar and brand messaging that enhanced recruitment marketing and market positioning.</li>
-          </ul>
-        </div>
-      </div>
+  <!-- Tech Cog -->
+  <div class="exp-item">
+    <img src="resume-images/TechCog-logo.png" alt="Tech Cog" class="exp-logo-float" onerror="this.style.display='none'" />
+    <div class="exp-role">Digital Marketer &amp; Social Media Strategist</div>
+    <div class="exp-company-row">
+      <a href="https://www.techcogg.com/" target="_blank" class="exp-company-link">Tech Cog</a>
+      <span class="exp-meta">
+        <span class="sep">|</span> <span class="date-part">Jun 2025</span> <span class="dash">–</span> <span class="date-part">Present</span>
+        <span class="sep">|</span> <span class="location-part">Lahore, Pk</span>
+        <span class="sep">|</span> <span class="type-part">On-site</span>
+        <span class="sep">|</span> <span class="duration-text">Loading...</span>
+      </span>
+    </div>
+    <div class="exp-desc">
+      <ul>
+        <li>Developed and executed holistic social strategies for a diverse international portfolio, including luxury brands and retail chains, aligning digital efforts with bottom-line business objectives.</li>
+        <li>Architected the full rebrand and social launch for a Saudi Arabian investment firm, crafting a strategic messaging framework and content pillars that established sector authority.</li>
+        <li>Engineered the social media and digital strategy for a Lahore-based aesthetic clinic, including full profile builds across social platforms and Google Business Profile optimization to drive measurable revenue growth.</li>
+        <li>Built the global employer brand for a Kenya-based HR agency, designing a comprehensive content calendar and brand messaging that enhanced recruitment marketing and market positioning.</li>
+      </ul>
+    </div>
+  </div>
 
-      <!-- Fantech Labs -->
-      <div class="exp-item">
-        <div class="exp-role">Digital Marketing Executive</div>
-        <div class="exp-company-row">
-          <a href="https://fantechlabs.ca/" target="_blank" class="exp-company-link">Fantech Labs</a>
-          <span class="exp-meta">
-            <span class="sep">|</span> Apr 2023 <span class="dash">–</span> Jun 2025
-            <span class="sep">|</span> Lahore, PK
-            <span class="sep">|</span> On-site
-          </span>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Executed data-driven Meta Ads for a U.S.-based healthcare client, increasing engagement by 35% and boosting online course sales.</li>
-            <li>Created high-performing Facebook and Instagram ads for an Indonesia-based martial arts client, boosting brand visibility and sales by 70%.</li>
-            <li>Managed multi-departmental Meta and Pinterest ad campaigns for a leading European e-commerce company and U.S. &amp; Canadian dropshipping stores, increasing sales by 35%.</li>
-            <li>Managed high-budget Facebook Ads campaigns for a Canadian mortgage client, optimizing CAD 25,000/month ad spend with a focus on lead generation through creative A/B testing.</li>
-            <li>Drove traffic and engagement for a U.S.-based home &amp; bath accessories store by optimizing Pinterest pins, boosting brand visibility and website visits.</li>
-            <li>Optimized high-budget Google Ads (CAD 45,000/mo) for a Canada-based mortgage client and German film studio, driving qualified leads.</li>
-            <li>Executed targeted Google Ads campaigns for a U.S.-based Jiu-Jitsu client, boosting engagement and conversions.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <!-- Fantech Labs -->
+  <div class="exp-item">
+    <img src="resume-images/FantechLabs-logo.png" alt="Fantech Labs" class="exp-logo-float" onerror="this.style.display='none'" />
+    <div class="exp-role">Digital Marketing Executive</div>
+    <div class="exp-company-row">
+      <a href="https://fantechlabs.ca/" target="_blank" class="exp-company-link">Fantech Labs</a>
+      <span class="exp-meta">
+        <span class="sep">|</span> <span class="date-part">Apr 2023</span> <span class="dash">–</span> <span class="date-part">Jun 2025</span>
+        <span class="sep">|</span> <span class="location-part">Lahore, Pk</span>
+        <span class="sep">|</span> <span class="type-part">On-site</span>
+        <span class="sep">|</span> <span class="duration-text">Loading...</span>
+      </span>
+    </div>
+    <div class="exp-desc">
+      <ul>
+        <li>Executed data-driven Meta Ads for a U.S.-based healthcare client, increasing engagement by 35% and boosting online course sales.</li>
+        <li>Created high-performing Facebook and Instagram ads for an Indonesia-based martial arts client, boosting brand visibility and sales by 70%.</li>
+        <li>Managed multi-departmental Meta and Pinterest ad campaigns for a leading European e-commerce company and U.S. &amp; Canadian dropshipping stores, increasing sales by 35%.</li>
+        <li>Managed high-budget Facebook Ads campaigns for a Canadian mortgage client, optimizing CAD 25,000/month ad spend with a focus on lead generation through creative A/B testing.</li>
+        <li>Drove traffic and engagement for a U.S.-based home &amp; bath accessories store by optimizing Pinterest pins, boosting brand visibility and website visits.</li>
+        <li>Optimized high-budget Google Ads (CAD 45,000/mo) for a Canada-based mortgage client and German film studio, driving qualified leads.</li>
+        <li>Executed targeted Google Ads campaigns for a U.S.-based Jiu-Jitsu client, boosting engagement and conversions.</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- ===== TECHNICAL SKILLS ===== -->
+  <!-- Teglax -->
+  <div class="exp-item">
+    <img src="resume-images/Teglax-logo.png" alt="Teglax" class="exp-logo-float" onerror="this.style.display='none'" />
+    <div class="exp-role">Digital Marketing Manager</div>
+    <div class="exp-company-row">
+      <a href="https://teglax.com/" target="_blank" class="exp-company-link">Teglax</a>
+      <span class="exp-meta">
+        <span class="sep">|</span> <span class="date-part">Jan 2024</span> <span class="dash">–</span> <span class="date-part">Jun 2025</span>
+        <span class="sep">|</span> <span class="location-part">Okara, Pk</span>
+        <span class="sep">|</span> <span class="type-part">Hybrid</span>
+        <span class="sep">|</span> <span class="duration-text">Loading...</span>
+      </span>
+    </div>
+    <div class="exp-desc">
+      <ul>
+        <li>Spearheaded social media and digital marketing strategies for multiple brands, including an Online Education Consultancy, a Traditional &amp; Digital Coaching Institute, and an Online Clothing Store in Pakistan.</li>
+        <li>Managed end-to-end digital marketing projects, ensuring timely delivery and quality outcomes with clear KPIs and deliverables.</li>
+        <li>Led cross-functional teams, delegated tasks efficiently, and developed project plans with clear deliverables to meet deadlines and objectives.</li>
+        <li>Conducted daily stand-ups and stakeholder coordination on project timelines, optimizing resource allocation and ensuring proactive issue resolution.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== TECHNICAL SKILLS ===== -->
     <section class="section">
       <div class="section-title">Technical Skills</div>
       <div class="skills-grid">
         <div>
           <div class="skills-group">
             <span class="label">Performance Marketing:</span>
-            <span class="tags">Google Ads, Meta Ads, Pinterest Ads, TikTok Ads</span>
+            <span class="tags">Google Ads, Meta Ads, Pinterest Ads, TikTok Ads, LinkedIn Ads, A/B Testing, Competitor & Keyword Research, Creative Iteration, Audience Nurturing, Campaign Roadmapping.</span>
           </div>
           <div class="skills-group">
             <span class="label">Social Media Marketing:</span>
-            <span class="tags">Social Media Strategy, Social Media Marketing, Social Media Optimization, Social Media Ads, Community Management, Account Management</span>
+            <span class="tags">Social Media Strategy, Optimization & Advertising, Digital Media Strategy, Community Growth, Data & Trend Analysis.</span>
           </div>
           <div class="skills-group">
             <span class="label">Influencer Marketing:</span>
-            <span class="tags">Influencer Hunting, Content Optimization, Script Writing, Brainstorming, Budget Negotiation, Client-Centered Interventions, Audience Planning, Marketing Campaign Management</span>
-          </div>
-          <div class="skills-group">
-            <span class="label">Content Marketing:</span>
-            <span class="tags">Content Writing, Copywriting, Content Strategy, Content Management, Content Marketing, Web Content Writing, Content Scheduling</span>
+            <span class="tags">Influencer Hunting, Budget Negotiation, Script Writing, Client-Centered Interventions, Audience Identification, Influencer Campaign Oversight.</span>
           </div>
           <div class="skills-group">
             <span class="label">Lead Generation:</span>
-            <span class="tags">PPC Campaigns, Paid Search Campaigns, Landing Page Optimization, Conversion Rate Optimization, Keyword Research</span>
+            <span class="tags">PPC Campaigns, Landing Page Strategy, B2B & B2C Campaigns, Funnel Building, User Journey Mapping, Offer Creation, Value Framing, Form Creations, Lead Flow Integration.</span>
           </div>
         </div>
         <div>
           <div class="skills-group">
-            <span class="label">Market Research &amp; Strategy:</span>
-            <span class="tags">Market Research, Marketing Strategy, Strategic Market Planning, Competitive Strategies, Trend Analysis, Data Analysis</span>
+            <span class="label">Content Marketing:</span>
+            <span class="tags">Digital Content Management & Optimization, Content Strategy, Content Scheduling, Cross-Platform Content Management, Social Media Writing, Copywriting, Web-Content Writing, Technical Writing, Blog Writing, Brainstorming, Case Studies.</span>
           </div>
           <div class="skills-group">
-            <span class="label">Content Creation &amp; Design:</span>
-            <span class="tags">Content Strategy, Copywriting, Canva, CapCut</span>
+            <span class="label">Market Research:</span>
+            <span class="tags">Market Research, Go-To-Market (GTM) Strategy, Competitor Intelligence & Benchmarking, Market Trend Analysis, Consumer Behavior.</span>
           </div>
           <div class="skills-group">
-            <span class="label">Project Management:</span>
-            <span class="tags">Trello, Asana, Monday.com, Slack, Airtable</span>
-          </div>
-          <div class="skills-group">
-            <span class="label">Data Analysis &amp; Tracking:</span>
-            <span class="tags">Google Analytics, Google Tag Manager, Google Workspace, Gamma.app</span>
+            <span class="label">Analysis &amp; Tracking:</span>
+            <span class="tags">GTM Setup, Tag, Trigger & Variable Configuration, User Behavior Tracking, 3rd Party Integrations, Event & Conversion Tracking, GA-4 Account Structure, GA-4 Tagging & Tracking, Custom Event Configuration, GA-4 Audience Buildings, GA-4 Reporting, Platform Linking, Funnel & Path Analysis.</span>
           </div>
         </div>
       </div>
     </section>
 
+
+
     <!-- ===== EDUCATION ===== -->
-    <section class="section">
-      <div class="section-title">Education</div>
+<section class="section">
+  <div class="section-title">Education</div>
 
-      <div class="edu-item">
-        <div class="edu-degree">BS Applied Psychology</div>
-        <div class="edu-school">University of Okara</div>
-        <div class="edu-grade">CGPA: <span class="value">3.76 / 4.00</span></div>
-      </div>
+  <div class="edu-item">
+    <img src="resume-images/UO-logo.png" alt="University of Okara" class="edu-logo-float" onerror="this.style.display='none'" />
+    <div class="edu-degree">BS Applied Psychology</div>
+    <div class="edu-school">University of Okara</div>
+    <div class="edu-grade">CGPA: <span class="value">3.61 / 4.00</span></div>
+  </div>
 
-      <div class="edu-item">
-        <div class="edu-degree">F.Sc. (Pre-Medical)</div>
-        <div class="edu-school">Govt. Postgraduate College, Okara</div>
-        <div class="edu-grade">Final Grade: <span class="value">A+</span></div>
-      </div>
-    </section>
+  <div class="edu-item">
+    <img src="resume-images/GovtPostgraduateCollegeOkara-logo.png" alt="Govt. Postgraduate College" class="edu-logo-float" onerror="this.style.display='none'" />
+    <div class="edu-degree">F.Sc. (Pre-Medical)</div>
+    <div class="edu-school">Govt. Postgraduate College, Okara</div>
+    <div class="edu-grade">Final Grade: <span class="value">A+</span></div>
+  </div>
+</section>
+
 
     <!-- ===== LANGUAGES ===== -->
     <section class="section">
@@ -676,8 +807,126 @@
       <div class="lang-item"><span class="lang-name">Urdu:</span> Native Proficiency</div>
       <div class="lang-item"><span class="lang-name">English:</span> Professional Proficiency</div>
     </section>
-
   </div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // ============================================================
+    // FUNCTION 1: Calculate duration (runs FIRST on original dates)
+    // ============================================================
+    function calculateDuration(startDateStr, endDateStr) {
+      // Parse dates
+      const months = {
+        'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+        'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+      };
+      
+      function parseDate(dateStr) {
+        const parts = dateStr.trim().split(' ');
+        const month = months[parts[0]];
+        const year = parseInt(parts[1]);
+        return { month, year };
+      }
+      
+      const start = parseDate(startDateStr);
+      
+      let end;
+      if (endDateStr.toLowerCase() === 'present') {
+        const now = new Date();
+        end = { month: now.getMonth(), year: now.getFullYear() };
+      } else {
+        end = parseDate(endDateStr);
+      }
+      
+      // Calculate total months (INCLUSIVE - counts both start and end months)
+      let totalMonths = (end.year - start.year) * 12 + (end.month - start.month) + 1;
+      
+      if (totalMonths < 1) totalMonths = 1;
+      
+      const years = Math.floor(totalMonths / 12);
+      const monthsRemaining = totalMonths % 12;
+      
+      let durationText = '';
+      if (years > 0 && monthsRemaining > 0) {
+        durationText = `${years} yr ${monthsRemaining} mo`;
+      } else if (years > 0) {
+        durationText = `${years} yr`;
+      } else if (monthsRemaining > 0) {
+        durationText = `${monthsRemaining} mo`;
+      } else {
+        durationText = '1 mo';
+      }
+      
+      return durationText;
+    }
+
+    // ============================================================
+    // FUNCTION 2: Process all experience items (runs FIRST)
+    // ============================================================
+    function processExperience() {
+      const expItems = document.querySelectorAll('.exp-item');
+      
+      expItems.forEach(item => {
+        const metaSpan = item.querySelector('.exp-meta');
+        if (!metaSpan) return;
+        
+        // Find start and end dates from ORIGINAL format "Sep 2025"
+        const dateText = metaSpan.textContent;
+        const dateMatch = dateText.match(/(\w{3})\s(\d{4})\s*–\s*(\w{3}\s\d{4}|Present)/i);
+        
+        if (dateMatch) {
+          const startDate = dateMatch[1] + ' ' + dateMatch[2]; // "Sep 2025"
+          const endDate = dateMatch[3]; // "Jun 2025" or "Present"
+          
+          const duration = calculateDuration(startDate, endDate);
+          
+          const durationText = item.querySelector('.duration-text');
+          if (durationText) {
+            let formattedHTML = '';
+            const parts = duration.split(' ');
+            for (let i = 0; i < parts.length; i++) {
+              if (i % 2 === 0) {
+                formattedHTML += `<span class="duration-number">${parts[i]}</span> `;
+              } else {
+                formattedHTML += `<span class="duration-label">${parts[i]}</span> `;
+              }
+            }
+            durationText.innerHTML = formattedHTML.trim();
+          }
+        }
+      });
+    }
+
+    // ============================================================
+    // FUNCTION 3: Convert dates to "Apr, 25" format (runs LAST)
+    // ============================================================
+    function convertDateFormat() {
+      document.querySelectorAll('.date-part').forEach(function(el) {
+        let text = el.textContent.trim();
+        // Convert "Sep 2025" to "Sep, 25"
+        text = text.replace(/(\w{3})\s(\d{4})/, function(match, month, year) {
+          return month + ", " + year.slice(-2);
+        });
+        el.textContent = text;
+      });
+    }
+
+    // ============================================================
+    // RUN IN CORRECT ORDER
+    // ============================================================
+    
+    // STEP 1: Calculate durations using ORIGINAL date format
+    processExperience();
+    
+    // STEP 2: Convert dates to "Apr, 25" format for display
+    convertDateFormat();
+
+  });
+</script>
+
 
 </body>
 </html>
